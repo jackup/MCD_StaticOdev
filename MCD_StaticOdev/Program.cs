@@ -21,6 +21,38 @@ namespace MCD_StaticOdev
             //İçerisinde Müsteri nesnesinin null olup olmadığını ve müsteri nesnesi içindeki kullanıcı adının dolu olması şartına baksın.
             //Yukarıdaki kriterlerden geçerse müşterimizi sanal olarak oluşturduğumuz database imize eklemeden önce email adresinden bir kontrol sağlasın.
             //Eğer sistemde aynı email adresi ile müşteri değeri var ise eklemesin yok ise sanal database içine ilgili nesneyi eklesin.
+
+            Musteri m1 = new Musteri();
+            m1.Id = 01;
+            m1.Isim = "yakup";
+            m1.Soyisim = "kömük";
+            m1.KullaniciAdi = "jackup";
+            m1.Sifre = "sanane";
+            m1.EmailAdres = "yk.58@hotmail.com";
+
+            Musteri m2 = new Musteri();
+            m2.Id = 02;
+            m2.Isim = "yusuf";
+            m2.Soyisim = "kömük";
+            m2.KullaniciAdi = "joseph";
+            m2.Sifre = "asfdsadg";
+            m2.EmailAdres = "yk.58@hotmail.com";
+
+
+            Musteri.MusteriEkle(m1);
+            Musteri.MusteriEkle(m2);
+
+
+            foreach (Musteri item in Musteri.A1)
+            {
+                Console.WriteLine(item.EmailAdres);
+                Console.WriteLine(item.Id);
+                Console.WriteLine(item.Isim);
+                Console.WriteLine(item.Soyisim);
+                Console.WriteLine(item.KullaniciAdi);
+                Console.WriteLine(item.Sifre);
+                Console.WriteLine("*******************");
+            }
         }
     }
 }
